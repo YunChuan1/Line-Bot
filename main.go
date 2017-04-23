@@ -78,8 +78,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-}
-	 /*// Licensed under the Apache License, Version 2.0 (the "License");
+/*}
+	 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
@@ -124,7 +124,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(500)
 		}
 		return
-	}
+	}*/
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -136,6 +136,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-}*/
+}
 
 //  message.Text  
