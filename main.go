@@ -62,7 +62,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 				} 
 				
-			case *linebot.TextMessage:
+			case *linebot.TextMessage2:
 				/*var pet *Pet*/
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
