@@ -152,10 +152,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}*/
 			}
 		}
-		else if	out := fmt.Sprintf("請撥打客服專線:04-26881407")
-		        if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
-					log.Print(err)
-			}
 	}
 }
 
