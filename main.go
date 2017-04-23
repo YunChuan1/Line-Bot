@@ -56,4 +56,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
+
+$msg = new \LINE\LINEBot\MessageBuilder\MultiMessageBuilder();
+for($i=0;$i<5;$i++)
+{
+  $_msg = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder("韻全電器".$i);
+  $msg->add($_msg);
+}
+$bot->replyMessage($replyToken,$msg);
 //  message.Text  
