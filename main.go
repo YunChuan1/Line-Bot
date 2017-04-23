@@ -25,7 +25,7 @@ import (
 var bot *linebot.Client
 
 //PetDB :
-var PetDB *Pets
+//var PetDB *Pets
 
 func main() {
 	var err error
@@ -52,20 +52,26 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				var pet *Pet
+				/*var pet *Pet*/
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
-				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
+				if strings.Contains(inText, "av端子") || strings.Contains(inText, "三色線") {
+					out := fmt.Sprintf("黃接黃")
+				} 
+				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
-				} else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
+				}else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
 					pet = PetDB.GetNextCat()
 				}
 
 				if pet == nil {
 					pet = PetDB.GetNextPet()
+				}*/
+                                
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
 				}
-
-				out := fmt.Sprintf("您好，目前的動物：名為%s, 所在地為:%s, 敘述: %s 電話為:%s 圖片網址在: %s", pet.Name, pet.Resettlement, pet.Note, pet.Phone, pet.ImageName)
+				/*out := fmt.Sprintf("您好，目前的動物：名為%s, 所在地為:%s, 敘述: %s 電話為:%s 圖片網址在: %s", pet.Name, pet.Resettlement, pet.Note, pet.Phone, pet.ImageName)
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 				}
@@ -78,7 +84,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-/*}
+}
 	 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -124,7 +130,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(500)
 		}
 		return
-	}*/
+	}
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -135,7 +141,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 		}
-	}
+	}*/
 }
 
 //  message.Text  
