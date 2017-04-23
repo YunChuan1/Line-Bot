@@ -55,8 +55,19 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				/*var pet *Pet*/
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
-				if strings.Contains(inText, "av端子") || strings.Contains(inText, "三色線") {
-					out := fmt.Sprintf("黃接黃")
+				if strings.Contains(inText, "av端子接法") || strings.Contains(inText, "三色線") || strings.Contains(inText, "av端子"){
+					out := fmt.Sprintf("黃接黃;白接白;紅接紅")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+				} 
+				
+			case *linebot.TextMessage:
+				/*var pet *Pet*/
+				log.Println(message.Text)
+				inText := strings.ToLower(message.Text)
+				if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") {
+					out := fmt.Sprintf("04-26881407")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
@@ -141,6 +152,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}*/
 			}
 		}
+		else 	out := fmt.Sprintf("請撥打客服專線:04-26881407")
+		        if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+			}
 	}
 }
 
