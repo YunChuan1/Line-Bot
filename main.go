@@ -47,13 +47,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
-			switch message := event.Message.(text) { //type
+			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("韻全君"+":"+" 今天星期六 Made by 蔡侑憬")).Do(); err != nil {
+				if _, err = bot.ReplyMessage(/*event.ReplyToken*/, linebot.NewTextMessage(message.ID+":"+" 今天星期六 Made by 蔡侑憬")).Do(); err != nil {
 					log.Print(err)
 				}
 			}
 		}
 	}
 }
-//  message.Text  message.ID+
+//  message.Text  
