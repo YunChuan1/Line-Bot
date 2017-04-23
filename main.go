@@ -53,17 +53,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				var pet *Pet
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
-				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") 
-				{
+				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
 				}
-				else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") 
-				{
+				else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
 					pet = PetDB.GetNextCat()
 				}
 
-				if pet == nil 
-				{
+				if pet == nil {
 					pet = PetDB.GetNextPet()
 				}
 
