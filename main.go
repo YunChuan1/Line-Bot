@@ -138,8 +138,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			case *linebot.TextMessage:
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+" 早安 : ) 快樂星期天呦! Made by 蔡侑憬")).Do(); err != nil {
 					log.Print(err)
-				}
-			}*/
+				}*/
+			}
 		}
 	}
 }
