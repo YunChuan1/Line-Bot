@@ -61,9 +61,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					log.Print(err)
 					}
 				} 
-			/*待改	
-			case *linebot.TextMessage:
-				var pet *Pet
+				
+			case *linebot2.TextMessage:
+				/*var pet *Pet*/
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") {
@@ -71,7 +71,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				} */
+				}
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
 				}else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
