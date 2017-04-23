@@ -29,7 +29,7 @@ var bot *linebot.Client
 
 func main() {
 	var err error
-	PetDB = NewPets()
+        //PetDB = NewPets()
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
 	log.Println("Bot:", bot, " err:", err)
 	http.HandleFunc("/callback", callbackHandler)
@@ -67,7 +67,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if pet == nil {
 					pet = PetDB.GetNextPet()
 				}*/
-                                
+                                out := fmt.Sprintf("黃接黃")
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 				}
