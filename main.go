@@ -57,6 +57,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "av端子") || strings.Contains(inText, "三色線") {
 					out := fmt.Sprintf("黃接黃")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				} 
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
@@ -67,10 +70,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if pet == nil {
 					pet = PetDB.GetNextPet()
 				}*/
-                                out := fmt.Sprintf("黃接黃")
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
-					log.Print(err)
-				}
+				
 				/*out := fmt.Sprintf("您好，目前的動物：名為%s, 所在地為:%s, 敘述: %s 電話為:%s 圖片網址在: %s", pet.Name, pet.Resettlement, pet.Note, pet.Phone, pet.ImageName)
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
