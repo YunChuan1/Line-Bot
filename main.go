@@ -51,7 +51,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
-			case linebot.TextMessage:
+			case *linebot.TextMessage:
 				/*var pet *Pet*/
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
