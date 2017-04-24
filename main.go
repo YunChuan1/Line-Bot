@@ -51,16 +51,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
-			case *linebot.TextMessage:
+			log.Println(message.Text)
+			inText := strings.ToLower(message.Text)	
+			case strings.Contains(inText, "av端子接法") || strings.Contains(inText, "三色線") || strings.Contains(inText, "av端子"):
 				/*var pet *Pet*/
-				log.Println(message.Text)
-				inText := strings.ToLower(message.Text)
-				if strings.Contains(inText, "av端子接法") || strings.Contains(inText, "三色線") || strings.Contains(inText, "av端子"){
-					out := fmt.Sprintf("黃接黃;白接白;紅接紅")
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+				out := fmt.Sprintf("黃接黃;白接白;紅接紅")
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}
+				
 				/*待補
 			case *linebot.TextMessage:
 				var pet *Pet
