@@ -53,6 +53,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {	
 			case *linebot.TextMessage:
 				/*var pet *Pet*/
+				var message *message
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "三色線") || strings.Contains(inText, "三色線接法") || strings.Contains(inText, "三色線怎麼接") || strings.Contains(inText, "三色線接電視") || strings.Contains(inText, "三條線") || strings.Contains(inText, "三條線接法") || strings.Contains(inText, "三條線怎麼接") || strings.Contains(inText, "三條線接電視") || strings.Contains(inText, "AV線") || strings.Contains(inText, "AV線接法") || strings.Contains(inText, "AV線怎麼接") || strings.Contains(inText, "AV線接電視") || strings.Contains(inText, "AV端子") || strings.Contains(inText, "AV端子接法") || strings.Contains(inText, "AV端子怎麼接") || strings.Contains(inText, "AV端子接電視") || strings.Contains(inText, "電視接三色線") || strings.Contains(inText, "電視接三條線") || strings.Contains(inText, "電視接AV線") || strings.Contains(inText, "電視接AV端子") || strings.Contains(inText, "紅白黃") || strings.Contains(inText, "紅黃白") || strings.Contains(inText, "白黃紅") || strings.Contains(inText, "白紅黃") || strings.Contains(inText, "黃紅白") || strings.Contains(inText, "黃白紅") || strings.Contains(inText, "紅白黃線") || strings.Contains(inText, "紅黃白線") || strings.Contains(inText, "白黃紅線") || strings.Contains(inText, "白紅黃線") || strings.Contains(inText, "黃紅白線") || strings.Contains(inText, "黃白紅線"){
@@ -98,6 +99,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 				}else if strings.Contains(inText, "韻全團隊") || strings.Contains(inText, "韻全Team") || strings.Contains(inText, "團隊") || strings.Contains(inText, "Team") || strings.Contains(inText, "TEAM") || strings.Contains(inText, "team") || strings.Contains(inText, "韻全team") || strings.Contains(inText, "韻全TEAM") || strings.Contains(inText, "Yunchuan Team") || strings.Contains(inText, "yunchuan team") || strings.Contains(inText, "YunChuan Team") || strings.Contains(inText, "YunChuan team") || strings.Contains(inText, "Yunchuan team") || strings.Contains(inText, "yunchuan Team"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/38364260443890720840.html")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+				}else if message == nil{
+					out := fmt.Sprintf("請")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
