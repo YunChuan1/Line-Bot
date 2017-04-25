@@ -76,7 +76,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "HDMI") || strings.Contains(inText, "hdmi") || strings.Contains(inText, "HDMI線") || strings.Contains(inText, "hdmi線") || strings.Contains(inText, "高清線"){
+				}else if strings.Contains(inText, "HDMI") || strings.Contains(inText, "hdmi") || strings.Contains(inText, "HDMI線") || strings.Contains(inText, "hdmi線") || strings.Contains(inText, "高清線") || strings.Contains(inText, "HDMI接法") || strings.Contains(inText, "hdmi接法") || strings.Contains(inText, "HDMI線接法") || strings.Contains(inText, "hdmi線接法") || strings.Contains(inText, "高清線接法") || strings.Contains(inText, "HDMI怎麼接") || strings.Contains(inText, "hdmi怎麼接") || strings.Contains(inText, "HDMI線怎麼接") || strings.Contains(inText, "hdmi線怎麼接") || strings.Contains(inText, "高清線怎麼接") || strings.Contains(inText, "HDMI接電視") || strings.Contains(inText, "hdmi接電視") || strings.Contains(inText, "HDMI線接電視") || strings.Contains(inText, "hdmi線接電視") || strings.Contains(inText, "高清線接電視"){
 					out := fmt.Sprintf("參考影片:https://www.youtube.com/watch?v=AbctqNEfkJw")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
