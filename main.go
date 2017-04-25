@@ -71,7 +71,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "接電視沒聲音") || strings.Contains(inText, "接電視沒影像") || strings.Contains(inText, "沒聲音") || strings.Contains(inText, "沒影像"){
+				}else if strings.Contains(inText, "接電視沒聲音") || strings.Contains(inText, "接電視沒影像") || strings.Contains(inText, "沒聲音") || strings.Contains(inText, "沒影像") || strings.Contains(inText, "電視沒聲音") || strings.Contains(inText, "電視沒影像"){
 					out := fmt.Sprintf("請問是用什麼線?")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
