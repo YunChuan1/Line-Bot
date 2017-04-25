@@ -55,8 +55,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				/*var pet *Pet*/
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
-				if strings.Contains(inText, "av端子接法") || strings.Contains(inText, "三色線") || strings.Contains(inText, "av端子"){
-					out := fmt.Sprintf("黃接黃;白接白;紅接紅")
+				if strings.Contains(inText, "三色線") || strings.Contains(inText, "三色線接法") || strings.Contains(inText, "三色線怎麼接") 
+				|| strings.Contains(inText, "三色線接電視") || strings.Contains(inText, "三條線") || strings.Contains(inText, "三條線接法") 
+				|| strings.Contains(inText, "三條線怎麼接") || strings.Contains(inText, "三條線接電視") || strings.Contains(inText, "AV線") 
+				|| strings.Contains(inText, "AV線接法") || strings.Contains(inText, "AV線怎麼接") || strings.Contains(inText, "AV線接電視") 
+				|| strings.Contains(inText, "AV端子") || strings.Contains(inText, "AV端子接法") || strings.Contains(inText, "AV端子怎麼接") 
+				|| strings.Contains(inText, "AV端子接電視"){
+					out := fmt.Sprintf("接法為:黃接黃;白接白;紅接紅, 參考影片:https://www.youtube.com/watch?v=j80aHfxMRXE")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
