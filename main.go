@@ -60,6 +60,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
+				}else if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") {
+					out := fmt.Sprintf("04-26881407")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				}
 				/*待補
 			case *linebot.TextMessage:
