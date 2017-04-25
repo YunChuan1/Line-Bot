@@ -86,13 +86,18 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website"){
+				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website") || strings.Contains(inText, "韻全") || strings.Contains(inText, "Yunchuan") || strings.Contains(inText, "YunChuan") || strings.Contains(inText, "yunchuan"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
 				}else if strings.Contains(inText, "工程委託") || strings.Contains(inText, "工程") || strings.Contains(inText, "委託") || strings.Contains(inText, "委託工程") || strings.Contains(inText, "engineering") || strings.Contains(inText, "Engineering"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/22996353513492021934.html")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+				}else if strings.Contains(inText, "韻全團隊") || strings.Contains(inText, "韻全Team") || strings.Contains(inText, "團隊") || strings.Contains(inText, "Team") || strings.Contains(inText, "TEAM") || strings.Contains(inText, "team") || strings.Contains(inText, "韻全team") || strings.Contains(inText, "韻全TEAM") || strings.Contains(inText, "Yunchuan Team") || strings.Contains(inText, "yunchuan team") || strings.Contains(inText, "YunChuan Team") || strings.Contains(inText, "YunChuan team") || strings.Contains(inText, "Yunchuan team") || strings.Contains(inText, "yunchuan Team"){
+					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/38364260443890720840.html")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
