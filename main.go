@@ -88,10 +88,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					log.Print(err)
 					}
 				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website") || strings.Contains(inText, "韻全") || strings.Contains(inText, "Yunchuan") || strings.Contains(inText, "YunChuan") || strings.Contains(inText, "yunchuan") || strings.Contains(inText, "韻全地址") || strings.Contains(inText, "韻全電器地址"){
-					out := fmt.Sprintf(`官網傳送門:http://yunchuan1.weebly.com/;
+					out := fmt.Sprintf(`官網傳送門:http://yunchuan1.weebly.com/
 http://yunchuan1.weebly.com/36899320972510520497.html
 
-公司地址:https://www.google.com.tw/maps/place/%E9%9F%BB%E5%85%A8%E9%9B%BB%E5%99%A8%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@24.3547999,120.6324758,15z/data=!4m5!3m4!1s0x0:0xe1fe4b6882381116!8m2!3d24.3547999!4d120.6324758
+公司地址: https://goo.gl/maps/7aPHSXVoPaA2
 台中市大甲區頂店里大發路211號`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
