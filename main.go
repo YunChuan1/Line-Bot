@@ -105,14 +105,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}else if strings.Contains(inText, "蔡侑憬") || strings.Contains(inText, "tsaiyouching") || strings.Contains(inText, "TsaiYouChing") || strings.Contains(inText, "Tsaiyouching") || strings.Contains(inText, "YouChingTsai") || strings.Contains(inText, "youchingTsai") || strings.Contains(inText, "youchingtsai") || strings.Contains(inText, "YouChing") || strings.Contains(inText, "youching") || strings.Contains(inText, "侑憬蔡") || strings.Contains(inText, "侑憬") || strings.Contains(inText, "Jack Tsai") || strings.Contains(inText, "JackTsai") || strings.Contains(inText, "Jack蔡") || strings.Contains(inText, "tsaiyujing"){
 					out := fmt.Sprintf(`很抱歉在維基百科中找不到任何資料!!!
 
-							    但是搜尋到以下資訊:
-							    此智能AI創造者,
-                                			    FaceBook: https://www.facebook.com/people/%E8%94%A1%E4%BE%91%E6%86%AC/100000423210433,
-							    Flickr: https://www.flickr.com/photos/127998184@N05/albums,
-							    Line ID:tsaiyujing
-							    信箱:bravo102795@gmail.com
+							但是搜尋到以下資訊:
+							此智能AI創造者,
+                                			FaceBook: https://www.facebook.com/people/%E8%94%A1%E4%BE%91%E6%86%AC/100000423210433,
+							Flickr: https://www.flickr.com/photos/127998184@N05/albums,
+							Line ID:tsaiyujing
+							信箱:bravo102795@gmail.com
 
-							    Ps.如果使用過後發現BUG還請以Mail通知,感謝您`)
+							Ps.如果使用過後發現BUG還請以Mail通知,感謝您`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
