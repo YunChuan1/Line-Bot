@@ -66,7 +66,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}
+				}else if strings.Contains(inText, "你好") || strings.Contains(inText, "hello") || strings.Contains(inText, "Hello") || strings.Contains(inText, "HELLO") || strings.Contains(inText, "你好啊") || strings.Contains(inText, "你好呀"){
+					out := fmt.Sprintf("你好") || out := fmt.Sprintf("hello")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
