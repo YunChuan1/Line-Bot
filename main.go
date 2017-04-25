@@ -86,7 +86,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網"){
+				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
