@@ -63,7 +63,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					}
 				}else if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") || strings.Contains(inText, "連接客服") || strings.Contains(inText, "打給客服") || strings.Contains(inText, "客服人員") || strings.Contains(inText, "電話") || strings.Contains(inText, "廠商電話") || strings.Contains(inText, "廠商客服專線"){
 					out := fmt.Sprintf(`打電話給韻全:04-26881407
-							    廠商客服專線-傳送門:http://yunchuan1.weebly.com/242882183023458263812356032218.html`)
+廠商客服專線-傳送門:http://yunchuan1.weebly.com/242882183023458263812356032218.html`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
