@@ -56,12 +56,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "三色線") || strings.Contains(inText, "三色線接法") || strings.Contains(inText, "三色線怎麼接") || strings.Contains(inText, "三色線接電視") || strings.Contains(inText, "三條線") || strings.Contains(inText, "三條線接法") || strings.Contains(inText, "三條線怎麼接") || strings.Contains(inText, "三條線接電視") || strings.Contains(inText, "AV線") || strings.Contains(inText, "AV線接法") || strings.Contains(inText, "AV線怎麼接") || strings.Contains(inText, "AV線接電視") || strings.Contains(inText, "AV端子") || strings.Contains(inText, "AV端子接法") || strings.Contains(inText, "AV端子怎麼接") || strings.Contains(inText, "AV端子接電視") || strings.Contains(inText, "電視接三色線") || strings.Contains(inText, "電視接三條線") || strings.Contains(inText, "電視接AV線") || strings.Contains(inText, "電視接AV端子"){
-					out := fmt.Sprintf(`接法為:黃接黃(影像);白接白(左聲道);紅接紅(右聲道),
+					out := fmt.Sprintf(`接法為:黃接黃(影像);白接白(左聲道);紅接紅(右聲道)
                                                             參考影片:https://www.youtube.com/watch?v=j80aHfxMRXE`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") {
+				}else if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") || strings.Contains(inText, "連接客服") || strings.Contains(inText, "打給客服") || strings.Contains(inText, "客服人員"){
 					out := fmt.Sprintf("04-26881407")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
