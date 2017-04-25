@@ -86,12 +86,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網"){
+				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "工程委託") || strings.Contains(inText, "工程") || strings.Contains(inText, "委託") || strings.Contains(inText, "委託工程"){
+				}else if strings.Contains(inText, "工程委託") || strings.Contains(inText, "工程") || strings.Contains(inText, "委託") || strings.Contains(inText, "委託工程") || strings.Contains(inText, "engineering") || strings.Contains(inText, "Engineering"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/22996353513492021934.html")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
