@@ -87,7 +87,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website") || strings.Contains(inText, "韻全") || strings.Contains(inText, "Yunchuan") || strings.Contains(inText, "YunChuan") || strings.Contains(inText, "yunchuan") || strings.Contains(inText, "韻全地址") || strings.Contains(inText, "韻全電器地址") || strings.Contains(inText, "你在哪") || strings.Contains(inText, "你住哪") || strings.Contains(inText, "你住哪?") || strings.Contains(inText, "你住哪?") || strings.Contains(inText, "你在哪裡?") || strings.Contains(inText, "你住哪裡?") || strings.Contains(inText, "你在哪裡") || strings.Contains(inText, "你住哪裡"){
+				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website") || strings.Contains(inText, "韻全") || strings.Contains(inText, "Yunchuan") || strings.Contains(inText, "YunChuan") || strings.Contains(inText, "yunchuan") || strings.Contains(inText, "韻全地址") || strings.Contains(inText, "韻全電器地址") || strings.Contains(inText, "你在哪") || strings.Contains(inText, "你住哪") || strings.Contains(inText, "你在哪?") || strings.Contains(inText, "你住哪?") || strings.Contains(inText, "你在哪裡?") || strings.Contains(inText, "你住哪裡?") || strings.Contains(inText, "你在哪裡") || strings.Contains(inText, "你住哪裡"){
 					out := fmt.Sprintf(`官網傳送門:http://yunchuan1.weebly.com/
 http://yunchuan1.weebly.com/36899320972510520497.html
 
@@ -153,7 +153,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					log.Print(err)
 					}
 				}else if strings.Contains(inText, "line") || strings.Contains(inText, "Line") || strings.Contains(inText, "LINE") || strings.Contains(inText, "line ai") || strings.Contains(inText, "Line ai") || strings.Contains(inText, "LINE ai") || strings.Contains(inText, "line AI") || strings.Contains(inText, "Line AI") || strings.Contains(inText, "LINE AI") || strings.Contains(inText, "line Ai") || strings.Contains(inText, "Line Ai") || strings.Contains(inText, "LINE Ai") || strings.Contains(inText, "lineai") || strings.Contains(inText, "Lineai") || strings.Contains(inText, "LINEai") || strings.Contains(inText, "lineAi") || strings.Contains(inText, "LineAi") || strings.Contains(inText, "LINEAi") || strings.Contains(inText, "lineAI") || strings.Contains(inText, "LineAI") || strings.Contains(inText, "LINEAI") || strings.Contains(inText, "參考") || strings.Contains(inText, "參考資料") || strings.Contains(inText, "教學") || strings.Contains(inText, "Line api教學") || strings.Contains(inText, "line api教學"){
-					out := fmt.Sprintf("傳送門: https://github.com/kkdai/LineBotTemplate")
+					out := fmt.Sprintf("請參考 Evan大大的教學文 --> 傳送門: http://www.evanlin.com/create-your-line-bot-golang/")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
