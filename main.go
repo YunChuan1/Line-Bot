@@ -120,6 +120,37 @@ Ps.如果使用過後發現BUG還請以Mail通知,感謝您`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
+				}else if strings.Contains(inText, "youtube") || strings.Contains(inText, "YouTube") || strings.Contains(inText, "Youtube") || strings.Contains(inText, "youTube") || strings.Contains(inText, "YOUTUBE") || strings.Contains(inText, "YOUTUBER") || strings.Contains(inText, "youtuber") || strings.Contains(inText, "YouTuber") || strings.Contains(inText, "Youtuber"){
+					out := fmt.Sprintf(`Youtube傳送門:https://www.youtube.com/?gl=TW
+台灣Youtuber列表:
+YunChuan TV: 待補上
+TGOP 這群人: https://www.youtube.com/user/e84768131
+蔡阿嘎: https://www.youtube.com/user/kyoko38
+阿神: https://www.youtube.com/user/charlie615119
+谷阿莫: https://www.youtube.com/channel/UC6IMF6xi_MZ3jA1wRlPQDLA
+菜喳: https://www.youtube.com/channel/UCSckEwXBJmJEUzIo6NplQ5g
+魚乾: https://www.youtube.com/user/RSPannie72127
+老皮: https://www.youtube.com/user/tolocat
+舞秋風: https://www.youtube.com/user/MrChesterccj
+聖結石Saint: https://www.youtube.com/channel/UCIdhd_1spj49unBWx1fjS2A
+阿滴英文: https://www.youtube.com/channel/UCeo3JwE3HezUWFdVcehQk9Q
+
+日本Youtuber列表:
+HikakinTV: https://www.youtube.com/channel/UCZf__ehlCEBPop-_sldpBUQ
+Hajime社長: https://www.youtube.com/channel/UCgMPP6RRjktV7krOfyUewqw
+SeikinTV: https://www.youtube.com/channel/UCg4nOl7_gtStrLwF0_xoV0A
+木下ゆうか Yuka Kinoshita: https://www.youtube.com/channel/UCFTVNLC7ysej-sD5lkLqNGA
+AAAjoken: https://www.youtube.com/channel/UCHhXSfCzQYAAFkpdxr7QsaA
+カズチャンネル/Kazu Channel: https://www.youtube.com/channel/UCVPz_nauEJpqPxxvYiOpCHQ
+瀬戸弘司 / Koji Seto: https://www.youtube.com/channel/UCFBjsYvwX7kWUjQoW7GcJ5A
+Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
+東海オンエア: https://www.youtube.com/channel/UCutJqz56653xV2wwSvut_hQ
+赤髪のとものゲーム実況チャンネル!!: https://www.youtube.com/channel/UCEIMvzf3R9d3_2A3IAajvHg
+
+資料來源: http://youtubers.demouth.net/`)
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				}
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
