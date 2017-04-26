@@ -234,7 +234,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*28*/				}else if strings.Contains(inText, "靠") || strings.Contains(inText, "靠爸") || strings.Contains(inText, "靠媽") || strings.Contains(inText, "靠北邊走"){
+/*28*/				}else if strings.Contains(inText, "靠") || strings.Contains(inText, "靠爸") || strings.Contains(inText, "靠媽") || strings.Contains(inText, "靠北邊走") || strings.Contains(inText, "靠北") || strings.Contains(inText, "哭爸"){
 					out := fmt.Sprintf("好好說吧。看看你。")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
