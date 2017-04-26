@@ -167,6 +167,11 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
+				}else if strings.Contains(inText, "你好嗎") || strings.Contains(inText, "你好嗎?"){
+					out := fmt.Sprintf("(ah...)")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				}
 
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
