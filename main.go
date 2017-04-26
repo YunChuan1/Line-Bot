@@ -157,7 +157,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					log.Print(err)
 					}
 				}else if strings.Contains(inText, "洗衣機"){
-					out := fmt.Sprintf("傳送門: 待補上")
+					out := fmt.Sprintf("傳送門: 待補上 http://yunchuan1.weebly.com/21830216972356021312.html")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
