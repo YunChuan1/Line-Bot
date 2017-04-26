@@ -24,7 +24,7 @@ import (
 
 var bot *linebot.Client
 
-PetDB :
+//PetDB :
 var PetDB *Pets
 
 func main() {
