@@ -122,6 +122,7 @@ Ps.如果使用過後發現BUG還請以Mail通知,感謝您`)
 					}
 				}else if strings.Contains(inText, "youtube") || strings.Contains(inText, "YouTube") || strings.Contains(inText, "Youtube") || strings.Contains(inText, "youTube") || strings.Contains(inText, "YOUTUBE") || strings.Contains(inText, "YOUTUBER") || strings.Contains(inText, "youtuber") || strings.Contains(inText, "YouTuber") || strings.Contains(inText, "Youtuber"){
 					out := fmt.Sprintf(`Youtube傳送門:https://www.youtube.com/?gl=TW
+
 台灣Youtuber列表:
 YunChuan TV: 待補上
 TGOP 這群人: https://www.youtube.com/user/e84768131
