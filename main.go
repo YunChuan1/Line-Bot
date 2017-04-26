@@ -167,7 +167,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "你好嗎") || strings.Contains(inText, "你好嗎?") || strings.Contains(inText, "are you ok?") || strings.Contains(inText, "are you ok") || strings.Contains(inText, "Are you ok?") || strings.Contains(inText, "Are you ok") || strings.Contains(inText, "過的好不好") || strings.Contains(inText, "好不好") || strings.Contains(inText, "過得好不好"){
+				}else if strings.Contains(inText, "你好嗎") || strings.Contains(inText, "你好嗎?") || strings.Contains(inText, "are you ok?") || strings.Contains(inText, "are you ok") || strings.Contains(inText, "Are you ok?") || strings.Contains(inText, "Are you ok") || strings.Contains(inText, "過的好不好") || strings.Contains(inText, "好不好") || strings.Contains(inText, "過得好不好") || strings.Contains(inText, "你過得好不好") || strings.Contains(inText, "妳過得好不好") || strings.Contains(inText, "你過的好不好") || strings.Contains(inText, "妳過的好不好") || strings.Contains(inText, "妳好嗎") || strings.Contains(inText, "妳好嗎?") || strings.Contains(inText, "你過得好嗎?") || strings.Contains(inText, "妳過得好嗎?") || strings.Contains(inText, "你過的好嗎?") || strings.Contains(inText, "妳過的好嗎?"){
 					out := fmt.Sprintf("I'm not good (T-T), 只是想要坐下來寫個程式而已, 何必把我使喚來使喚去呢, 我不是你們的免費勞工耶. (#｀Д´)")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
@@ -188,16 +188,13 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 				}else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
 					pet = PetDB.GetNextCat()
 				}*/
-
-				if pet == nil {
-					pet = PetDB.GetNextPet()
-				}
-				
-				out := fmt.Sprintf("恩恩,然後咧??")
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+				else if pet == nil {
+						pet = PetDB.GetNextPet()	
+					out := fmt.Sprintf("恩恩,然後咧??")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
+					}
 				}
-
   				/*log.Println("Img:", pet.ImageName)
 
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(pet.ImageName, pet.ImageName)).Do(); err != nil {
