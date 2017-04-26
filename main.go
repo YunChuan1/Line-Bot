@@ -331,4 +331,30 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func callbackHandler(w http.ResponseWriter, r *http.Request) {
+   received, err := bot.ParseRequest(r)
+	if err != nil {
+		if err == linebot.ErrInvalidSignature {
+			w.WriteHeader(400)
+		} else {
+			w.WriteHeader(500)
+		}
+		return
+	}
+	for _, result := range received.Results {
+		content := result.Content()
+
+		//Add with new friend.
+		if content != nil && content.IsOperation && content.OpType == OpTypeAddedAsFriend {
+		
+			out := fmt.Sprintf("(Welcom MSG)歡迎訊息..")
+			//result.RawContent.Params[0] is who send your bot friend added operation, otherwise you cannot get in content or operation content.
+			_, err = bot.SendText([]string{result.RawContent.Params[0]}, out)
+			if err != nil {
+				log.Println(err)
+			}
+			log.Println("New friend add event.")
+		}
+  }
+}
 //  message.Text  
