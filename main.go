@@ -263,14 +263,6 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 				}
-		/*		
-				default pet == nil {
-						pet = PetDB.GetNextPet()	
-					out := fmt.Sprintf("恩恩,然後咧??")
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
-					log.Print(err)
-					}
-				}*/
   				/*log.Println("Img:", pet.ImageName)
 
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(pet.ImageName, pet.ImageName)).Do(); err != nil {
