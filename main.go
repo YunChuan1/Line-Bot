@@ -214,6 +214,11 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
+/*24*/				}else if strings.Contains(inText, "妳滾") || strings.Contains(inText, "你滾") || strings.Contains(inText, "你走開") || strings.Contains(inText, "妳走開") || strings.Contains(inText, "閉嘴") || strings.Contains(inText, "妳閉嘴") || strings.Contains(inText, "你閉嘴") || strings.Contains(inText, "走開") || strings.Contains(inText, "滾") || strings.Contains(inText, "別吵") || strings.Contains(inText, "你別吵") || strings.Contains(inText, "妳別吵") || strings.Contains(inText, "店店") || strings.Contains(inText, "妳店店") || strings.Contains(inText, "你店店"){
+					out := fmt.Sprintf("沒想到你是會說這樣狠話的人....！ (T-T)")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				}
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
