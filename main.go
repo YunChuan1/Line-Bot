@@ -239,6 +239,16 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
+/*29*/				}else if strings.Contains(inText, "聽音樂") || strings.Contains(inText, "撥音樂") || strings.Contains(inText, "撥放音樂") || strings.Contains(inText, "Play Music") || strings.Contains(inText, "play music"){
+					out := fmt.Sprintf("啊~~夭壽喔。撥放鍵被我妹吃了。")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*30*/				}else if strings.Contains(inText, "他馬的") || strings.Contains(inText, "他媽的"){
+					out := fmt.Sprintf("嗚嗚~~ 喂警察嗎,就是這個人")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				}
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
