@@ -82,7 +82,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "作者") || strings.Contains(inText, "開發人員") || strings.Contains(inText, "Creater") || strings.Contains(inText, "CREATER") || strings.Contains(inText, "創作者"){
+				}else if strings.Contains(inText, "作者") || strings.Contains(inText, "開發人員") || strings.Contains(inText, "Creater") || strings.Contains(inText, "CREATER") || strings.Contains(inText, "創作者") || strings.Contains(inText, "開發者"){
 					out := fmt.Sprintf("Made by 蔡侑憬")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
@@ -148,6 +148,11 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 赤髪のとものゲーム実況チャンネル!!: https://www.youtube.com/channel/UCEIMvzf3R9d3_2A3IAajvHg
 
 資料來源: http://youtubers.demouth.net/`)
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+				}else if strings.Contains(inText, "line") || strings.Contains(inText, "Line") || strings.Contains(inText, "LINE") || strings.Contains(inText, "line ai") || strings.Contains(inText, "Line ai") || strings.Contains(inText, "LINE ai") || strings.Contains(inText, "line AI") || strings.Contains(inText, "Line AI") || strings.Contains(inText, "LINE AI") || strings.Contains(inText, "line Ai") || strings.Contains(inText, "Line Ai") || strings.Contains(inText, "LINE Ai") || strings.Contains(inText, "lineai") || strings.Contains(inText, "Lineai") || strings.Contains(inText, "LINEai") || strings.Contains(inText, "lineAi") || strings.Contains(inText, "LineAi") || strings.Contains(inText, "LINEAi") || strings.Contains(inText, "lineAI") || strings.Contains(inText, "LineAI") || strings.Contains(inText, "LINEAI") || strings.Contains(inText, "參考") || strings.Contains(inText, "參考資料") || strings.Contains(inText, "教學") || strings.Contains(inText, "Line api教學"){
+					out := fmt.Sprintf("傳送門: https://github.com/kkdai/LineBotTemplate")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
