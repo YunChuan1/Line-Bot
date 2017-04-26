@@ -55,39 +55,39 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				var pet *Pet
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
-				if strings.Contains(inText, "三色線") || strings.Contains(inText, "三色線接法") || strings.Contains(inText, "三色線怎麼接") || strings.Contains(inText, "三色線接電視") || strings.Contains(inText, "三條線") || strings.Contains(inText, "三條線接法") || strings.Contains(inText, "三條線怎麼接") || strings.Contains(inText, "三條線接電視") || strings.Contains(inText, "AV線") || strings.Contains(inText, "AV線接法") || strings.Contains(inText, "AV線怎麼接") || strings.Contains(inText, "AV線接電視") || strings.Contains(inText, "AV端子") || strings.Contains(inText, "AV端子接法") || strings.Contains(inText, "AV端子怎麼接") || strings.Contains(inText, "AV端子接電視") || strings.Contains(inText, "電視接三色線") || strings.Contains(inText, "電視接三條線") || strings.Contains(inText, "電視接AV線") || strings.Contains(inText, "電視接AV端子") || strings.Contains(inText, "紅白黃") || strings.Contains(inText, "紅黃白") || strings.Contains(inText, "白黃紅") || strings.Contains(inText, "白紅黃") || strings.Contains(inText, "黃紅白") || strings.Contains(inText, "黃白紅") || strings.Contains(inText, "紅白黃線") || strings.Contains(inText, "紅黃白線") || strings.Contains(inText, "白黃紅線") || strings.Contains(inText, "白紅黃線") || strings.Contains(inText, "黃紅白線") || strings.Contains(inText, "黃白紅線"){
+/*1*/				if strings.Contains(inText, "三色線") || strings.Contains(inText, "三色線接法") || strings.Contains(inText, "三色線怎麼接") || strings.Contains(inText, "三色線接電視") || strings.Contains(inText, "三條線") || strings.Contains(inText, "三條線接法") || strings.Contains(inText, "三條線怎麼接") || strings.Contains(inText, "三條線接電視") || strings.Contains(inText, "AV線") || strings.Contains(inText, "AV線接法") || strings.Contains(inText, "AV線怎麼接") || strings.Contains(inText, "AV線接電視") || strings.Contains(inText, "AV端子") || strings.Contains(inText, "AV端子接法") || strings.Contains(inText, "AV端子怎麼接") || strings.Contains(inText, "AV端子接電視") || strings.Contains(inText, "電視接三色線") || strings.Contains(inText, "電視接三條線") || strings.Contains(inText, "電視接AV線") || strings.Contains(inText, "電視接AV端子") || strings.Contains(inText, "紅白黃") || strings.Contains(inText, "紅黃白") || strings.Contains(inText, "白黃紅") || strings.Contains(inText, "白紅黃") || strings.Contains(inText, "黃紅白") || strings.Contains(inText, "黃白紅") || strings.Contains(inText, "紅白黃線") || strings.Contains(inText, "紅黃白線") || strings.Contains(inText, "白黃紅線") || strings.Contains(inText, "白紅黃線") || strings.Contains(inText, "黃紅白線") || strings.Contains(inText, "黃白紅線"){
 					out := fmt.Sprintf(`接法為:黃接黃(影像);白接白(左聲道);紅接紅(右聲道)
                                                             參考影片:https://www.youtube.com/watch?v=j80aHfxMRXE`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") || strings.Contains(inText, "連接客服") || strings.Contains(inText, "打給客服") || strings.Contains(inText, "客服人員") || strings.Contains(inText, "電話") || strings.Contains(inText, "廠商電話") || strings.Contains(inText, "廠商客服專線"){
+/*2*/				}else if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") || strings.Contains(inText, "連接客服") || strings.Contains(inText, "打給客服") || strings.Contains(inText, "客服人員") || strings.Contains(inText, "電話") || strings.Contains(inText, "廠商電話") || strings.Contains(inText, "廠商客服專線"){
 					out := fmt.Sprintf(`打電話給韻全:04-26881407
 廠商客服專線-傳送門:http://yunchuan1.weebly.com/242882183023458263812356032218.html`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "你好") || strings.Contains(inText, "hello") || strings.Contains(inText, "Hello") || strings.Contains(inText, "HELLO") || strings.Contains(inText, "你好啊") || strings.Contains(inText, "你好呀") || strings.Contains(inText, "妳好") || strings.Contains(inText, "妳好呀") || strings.Contains(inText, "妳好阿") || strings.Contains(inText, "大大") || strings.Contains(inText, "大大妳好") || strings.Contains(inText, "大大你好") || strings.Contains(inText, "機器人妳好") || strings.Contains(inText, "機器人你好"){
-					out := fmt.Sprintf("你好,待補上")
+/*3*/				}else if strings.Contains(inText, "你好") || strings.Contains(inText, "hello") || strings.Contains(inText, "Hello") || strings.Contains(inText, "HELLO") || strings.Contains(inText, "你好啊") || strings.Contains(inText, "你好呀") || strings.Contains(inText, "妳好") || strings.Contains(inText, "妳好呀") || strings.Contains(inText, "妳好阿") || strings.Contains(inText, "大大") || strings.Contains(inText, "大大妳好") || strings.Contains(inText, "大大你好") || strings.Contains(inText, "機器人妳好") || strings.Contains(inText, "機器人你好"){
+					out := fmt.Sprintf("你好,說明待補上")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "接電視沒聲音") || strings.Contains(inText, "接電視沒影像") || strings.Contains(inText, "沒聲音") || strings.Contains(inText, "沒影像") || strings.Contains(inText, "電視沒聲音") || strings.Contains(inText, "電視沒影像"){
+/*4*/				}else if strings.Contains(inText, "接電視沒聲音") || strings.Contains(inText, "接電視沒影像") || strings.Contains(inText, "沒聲音") || strings.Contains(inText, "沒影像") || strings.Contains(inText, "電視沒聲音") || strings.Contains(inText, "電視沒影像"){
 					out := fmt.Sprintf("請問是用什麼線連接?")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "HDMI") || strings.Contains(inText, "hdmi") || strings.Contains(inText, "HDMI線") || strings.Contains(inText, "hdmi線") || strings.Contains(inText, "高清線") || strings.Contains(inText, "HDMI接法") || strings.Contains(inText, "hdmi接法") || strings.Contains(inText, "HDMI線接法") || strings.Contains(inText, "hdmi線接法") || strings.Contains(inText, "高清線接法") || strings.Contains(inText, "HDMI怎麼接") || strings.Contains(inText, "hdmi怎麼接") || strings.Contains(inText, "HDMI線怎麼接") || strings.Contains(inText, "hdmi線怎麼接") || strings.Contains(inText, "高清線怎麼接") || strings.Contains(inText, "HDMI接電視") || strings.Contains(inText, "hdmi接電視") || strings.Contains(inText, "HDMI線接電視") || strings.Contains(inText, "hdmi線接電視") || strings.Contains(inText, "高清線接電視"){
+/*5*/				}else if strings.Contains(inText, "HDMI") || strings.Contains(inText, "hdmi") || strings.Contains(inText, "HDMI線") || strings.Contains(inText, "hdmi線") || strings.Contains(inText, "高清線") || strings.Contains(inText, "HDMI接法") || strings.Contains(inText, "hdmi接法") || strings.Contains(inText, "HDMI線接法") || strings.Contains(inText, "hdmi線接法") || strings.Contains(inText, "高清線接法") || strings.Contains(inText, "HDMI怎麼接") || strings.Contains(inText, "hdmi怎麼接") || strings.Contains(inText, "HDMI線怎麼接") || strings.Contains(inText, "hdmi線怎麼接") || strings.Contains(inText, "高清線怎麼接") || strings.Contains(inText, "HDMI接電視") || strings.Contains(inText, "hdmi接電視") || strings.Contains(inText, "HDMI線接電視") || strings.Contains(inText, "hdmi線接電視") || strings.Contains(inText, "高清線接電視"){
 					out := fmt.Sprintf("參考影片:https://www.youtube.com/watch?v=AbctqNEfkJw")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "作者") || strings.Contains(inText, "開發人員") || strings.Contains(inText, "Creater") || strings.Contains(inText, "CREATER") || strings.Contains(inText, "創作者") || strings.Contains(inText, "開發者"){
+/*6*/				}else if strings.Contains(inText, "作者") || strings.Contains(inText, "開發人員") || strings.Contains(inText, "Creater") || strings.Contains(inText, "CREATER") || strings.Contains(inText, "創作者") || strings.Contains(inText, "開發者"){
 					out := fmt.Sprintf("Made by 蔡侑憬")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website") || strings.Contains(inText, "韻全") || strings.Contains(inText, "Yunchuan") || strings.Contains(inText, "YunChuan") || strings.Contains(inText, "yunchuan") || strings.Contains(inText, "韻全地址") || strings.Contains(inText, "韻全電器地址") || strings.Contains(inText, "你在哪") || strings.Contains(inText, "你住哪") || strings.Contains(inText, "你在哪?") || strings.Contains(inText, "你住哪?") || strings.Contains(inText, "你在哪裡?") || strings.Contains(inText, "你住哪裡?") || strings.Contains(inText, "你在哪裡") || strings.Contains(inText, "你住哪裡") || strings.Contains(inText, "地址") || strings.Contains(inText, "地址是") || strings.Contains(inText, "地址是?") || strings.Contains(inText, "請問地址是?") || strings.Contains(inText, "請問地址?") || strings.Contains(inText, "請問地址是") || strings.Contains(inText, "請問地址"){
+/*7*/				}else if strings.Contains(inText, "網站") || strings.Contains(inText, "官方網站") || strings.Contains(inText, "韻全官方網站") || strings.Contains(inText, "韻全官網") || strings.Contains(inText, "官網") || strings.Contains(inText, "Official website") || strings.Contains(inText, "Official") || strings.Contains(inText, "official") || strings.Contains(inText, "official website") || strings.Contains(inText, "韻全") || strings.Contains(inText, "Yunchuan") || strings.Contains(inText, "YunChuan") || strings.Contains(inText, "yunchuan") || strings.Contains(inText, "韻全地址") || strings.Contains(inText, "韻全電器地址") || strings.Contains(inText, "你在哪") || strings.Contains(inText, "你住哪") || strings.Contains(inText, "你在哪?") || strings.Contains(inText, "你住哪?") || strings.Contains(inText, "你在哪裡?") || strings.Contains(inText, "你住哪裡?") || strings.Contains(inText, "你在哪裡") || strings.Contains(inText, "你住哪裡") || strings.Contains(inText, "地址") || strings.Contains(inText, "地址是") || strings.Contains(inText, "地址是?") || strings.Contains(inText, "請問地址是?") || strings.Contains(inText, "請問地址?") || strings.Contains(inText, "請問地址是") || strings.Contains(inText, "請問地址"){
 					out := fmt.Sprintf(`官網傳送門:http://yunchuan1.weebly.com/
 http://yunchuan1.weebly.com/36899320972510520497.html
 
@@ -96,17 +96,17 @@ http://yunchuan1.weebly.com/36899320972510520497.html
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "工程委託") || strings.Contains(inText, "工程") || strings.Contains(inText, "委託") || strings.Contains(inText, "委託工程") || strings.Contains(inText, "engineering") || strings.Contains(inText, "Engineering"){
+/*8*/				}else if strings.Contains(inText, "工程委託") || strings.Contains(inText, "工程") || strings.Contains(inText, "委託") || strings.Contains(inText, "委託工程") || strings.Contains(inText, "engineering") || strings.Contains(inText, "Engineering"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/22996353513492021934.html")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "韻全團隊") || strings.Contains(inText, "韻全Team") || strings.Contains(inText, "團隊") || strings.Contains(inText, "Team") || strings.Contains(inText, "TEAM") || strings.Contains(inText, "team") || strings.Contains(inText, "韻全team") || strings.Contains(inText, "韻全TEAM") || strings.Contains(inText, "Yunchuan Team") || strings.Contains(inText, "yunchuan team") || strings.Contains(inText, "YunChuan Team") || strings.Contains(inText, "YunChuan team") || strings.Contains(inText, "Yunchuan team") || strings.Contains(inText, "yunchuan Team") || strings.Contains(inText, "yunchuanteam"){
+/*9*/				}else if strings.Contains(inText, "韻全團隊") || strings.Contains(inText, "韻全Team") || strings.Contains(inText, "團隊") || strings.Contains(inText, "Team") || strings.Contains(inText, "TEAM") || strings.Contains(inText, "team") || strings.Contains(inText, "韻全team") || strings.Contains(inText, "韻全TEAM") || strings.Contains(inText, "Yunchuan Team") || strings.Contains(inText, "yunchuan team") || strings.Contains(inText, "YunChuan Team") || strings.Contains(inText, "YunChuan team") || strings.Contains(inText, "Yunchuan team") || strings.Contains(inText, "yunchuan Team") || strings.Contains(inText, "yunchuanteam"){
 					out := fmt.Sprintf("傳送門:http://yunchuan1.weebly.com/38364260443890720840.html")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "蔡侑憬") || strings.Contains(inText, "tsaiyouching") || strings.Contains(inText, "TsaiYouChing") || strings.Contains(inText, "Tsaiyouching") || strings.Contains(inText, "YouChingTsai") || strings.Contains(inText, "youchingTsai") || strings.Contains(inText, "youchingtsai") || strings.Contains(inText, "YouChing") || strings.Contains(inText, "youching") || strings.Contains(inText, "侑憬蔡") || strings.Contains(inText, "侑憬") || strings.Contains(inText, "Jack Tsai") || strings.Contains(inText, "JackTsai") || strings.Contains(inText, "Jack蔡") || strings.Contains(inText, "tsaiyujing") || strings.Contains(inText, "YC") || strings.Contains(inText, "yc"){
+/*10*/				}else if strings.Contains(inText, "蔡侑憬") || strings.Contains(inText, "tsaiyouching") || strings.Contains(inText, "TsaiYouChing") || strings.Contains(inText, "Tsaiyouching") || strings.Contains(inText, "YouChingTsai") || strings.Contains(inText, "youchingTsai") || strings.Contains(inText, "youchingtsai") || strings.Contains(inText, "YouChing") || strings.Contains(inText, "youching") || strings.Contains(inText, "侑憬蔡") || strings.Contains(inText, "侑憬") || strings.Contains(inText, "Jack Tsai") || strings.Contains(inText, "JackTsai") || strings.Contains(inText, "Jack蔡") || strings.Contains(inText, "tsaiyujing") || strings.Contains(inText, "YC") || strings.Contains(inText, "yc"){
 					out := fmt.Sprintf(`很抱歉在維基百科中找不到任何資料!!!
 
 但是搜尋到以下資訊:
@@ -120,7 +120,7 @@ Ps.如果使用過後發現BUG還請以Mail通知,感謝您`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "youtube") || strings.Contains(inText, "YouTube") || strings.Contains(inText, "Youtube") || strings.Contains(inText, "youTube") || strings.Contains(inText, "YOUTUBE") || strings.Contains(inText, "YOUTUBER") || strings.Contains(inText, "youtuber") || strings.Contains(inText, "YouTuber") || strings.Contains(inText, "Youtuber"){
+/*11*/				}else if strings.Contains(inText, "youtube") || strings.Contains(inText, "YouTube") || strings.Contains(inText, "Youtube") || strings.Contains(inText, "youTube") || strings.Contains(inText, "YOUTUBE") || strings.Contains(inText, "YOUTUBER") || strings.Contains(inText, "youtuber") || strings.Contains(inText, "YouTuber") || strings.Contains(inText, "Youtuber"){
 					out := fmt.Sprintf(`Youtube傳送門:https://www.youtube.com/?gl=TW
 
 台灣Youtuber列表:
@@ -152,33 +152,60 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "line") || strings.Contains(inText, "Line") || strings.Contains(inText, "LINE") || strings.Contains(inText, "line ai") || strings.Contains(inText, "Line ai") || strings.Contains(inText, "LINE ai") || strings.Contains(inText, "line AI") || strings.Contains(inText, "Line AI") || strings.Contains(inText, "LINE AI") || strings.Contains(inText, "line Ai") || strings.Contains(inText, "Line Ai") || strings.Contains(inText, "LINE Ai") || strings.Contains(inText, "lineai") || strings.Contains(inText, "Lineai") || strings.Contains(inText, "LINEai") || strings.Contains(inText, "lineAi") || strings.Contains(inText, "LineAi") || strings.Contains(inText, "LINEAi") || strings.Contains(inText, "lineAI") || strings.Contains(inText, "LineAI") || strings.Contains(inText, "LINEAI") || strings.Contains(inText, "參考") || strings.Contains(inText, "參考資料") || strings.Contains(inText, "教學") || strings.Contains(inText, "Line api教學") || strings.Contains(inText, "line api教學"){
+/*12*/				}else if strings.Contains(inText, "line") || strings.Contains(inText, "Line") || strings.Contains(inText, "LINE") || strings.Contains(inText, "line ai") || strings.Contains(inText, "Line ai") || strings.Contains(inText, "LINE ai") || strings.Contains(inText, "line AI") || strings.Contains(inText, "Line AI") || strings.Contains(inText, "LINE AI") || strings.Contains(inText, "line Ai") || strings.Contains(inText, "Line Ai") || strings.Contains(inText, "LINE Ai") || strings.Contains(inText, "lineai") || strings.Contains(inText, "Lineai") || strings.Contains(inText, "LINEai") || strings.Contains(inText, "lineAi") || strings.Contains(inText, "LineAi") || strings.Contains(inText, "LINEAi") || strings.Contains(inText, "lineAI") || strings.Contains(inText, "LineAI") || strings.Contains(inText, "LINEAI") || strings.Contains(inText, "參考") || strings.Contains(inText, "參考資料") || strings.Contains(inText, "教學") || strings.Contains(inText, "Line api教學") || strings.Contains(inText, "line api教學"){
 					out := fmt.Sprintf("請參考 Evan大大的教學文 --> 傳送門: http://www.evanlin.com/create-your-line-bot-golang/")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "洗衣機"){
+/*13*/				}else if strings.Contains(inText, "洗衣機"){
 					out := fmt.Sprintf("傳送門: 待補上 http://yunchuan1.weebly.com/21830216972356021312.html")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "AKIRA放送") || strings.Contains(inText, "akira放送") || strings.Contains(inText, "Akira放送") || strings.Contains(inText, "AKIRA") || strings.Contains(inText, "akira") || strings.Contains(inText, "Akira") || strings.Contains(inText, "放送") || strings.Contains(inText, "日語教學") || strings.Contains(inText, "AKIRA 放送") || strings.Contains(inText, "akira 放送") || strings.Contains(inText, "Akira 放送") || strings.Contains(inText, "日語"){
+/*14*/				}else if strings.Contains(inText, "AKIRA放送") || strings.Contains(inText, "akira放送") || strings.Contains(inText, "Akira放送") || strings.Contains(inText, "AKIRA") || strings.Contains(inText, "akira") || strings.Contains(inText, "Akira") || strings.Contains(inText, "放送") || strings.Contains(inText, "日語教學") || strings.Contains(inText, "AKIRA 放送") || strings.Contains(inText, "akira 放送") || strings.Contains(inText, "Akira 放送") || strings.Contains(inText, "日語"){
 					out := fmt.Sprintf("AKIRA放送 傳送門: https://www.youtube.com/user/kagayaku1006")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "你好嗎") || strings.Contains(inText, "你好嗎?") || strings.Contains(inText, "are you ok?") || strings.Contains(inText, "are you ok") || strings.Contains(inText, "Are you ok?") || strings.Contains(inText, "Are you ok") || strings.Contains(inText, "過的好不好") || strings.Contains(inText, "好不好") || strings.Contains(inText, "過得好不好") || strings.Contains(inText, "你過得好不好") || strings.Contains(inText, "妳過得好不好") || strings.Contains(inText, "你過的好不好") || strings.Contains(inText, "妳過的好不好") || strings.Contains(inText, "妳好嗎") || strings.Contains(inText, "妳好嗎?") || strings.Contains(inText, "你過得好嗎?") || strings.Contains(inText, "妳過得好嗎?") || strings.Contains(inText, "你過的好嗎?") || strings.Contains(inText, "妳過的好嗎?"){
+/*15*/				}else if strings.Contains(inText, "你好嗎") || strings.Contains(inText, "你好嗎?") || strings.Contains(inText, "are you ok?") || strings.Contains(inText, "are you ok") || strings.Contains(inText, "Are you ok?") || strings.Contains(inText, "Are you ok") || strings.Contains(inText, "過的好不好") || strings.Contains(inText, "好不好") || strings.Contains(inText, "過得好不好") || strings.Contains(inText, "你過得好不好") || strings.Contains(inText, "妳過得好不好") || strings.Contains(inText, "你過的好不好") || strings.Contains(inText, "妳過的好不好") || strings.Contains(inText, "妳好嗎") || strings.Contains(inText, "妳好嗎?") || strings.Contains(inText, "你過得好嗎?") || strings.Contains(inText, "妳過得好嗎?") || strings.Contains(inText, "你過的好嗎?") || strings.Contains(inText, "妳過的好嗎?"){
 					out := fmt.Sprintf("I'm not good (T-T), 只是想要坐下來寫個程式而已, 何必把我使喚來使喚去呢, 我不是你們的免費勞工耶. (#｀Д´)")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "庫存"){
+/*16*/				}else if strings.Contains(inText, "庫存"){
 					out := fmt.Sprintf("待補上")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "冷氣不冷") || strings.Contains(inText, "冷氣保養") || strings.Contains(inText, "不冷") || strings.Contains(inText, "冷氣不涼") || strings.Contains(inText, "不涼") || strings.Contains(inText, "冷氣清潔方法") || strings.Contains(inText, "冷氣清潔"){
+/*17*/				}else if strings.Contains(inText, "冷氣不冷") || strings.Contains(inText, "冷氣保養") || strings.Contains(inText, "不冷") || strings.Contains(inText, "冷氣不涼") || strings.Contains(inText, "不涼") || strings.Contains(inText, "冷氣清潔方法") || strings.Contains(inText, "冷氣清潔"){
 					out := fmt.Sprintf("待補上 傳送門: https://www.youtube.com/watch?v=orOkJ6rsJZg")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*18*/				}else if strings.Contains(inText, "安安") || strings.Contains(inText, "大大安安") || strings.Contains(inText, "機器人安安"){
+					out := fmt.Sprintf("安安,說明待補上")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*19*/				}else if strings.Contains(inText, "哈囉") || strings.Contains(inText, "大大哈囉") || strings.Contains(inText, "機器人哈囉"){
+					out := fmt.Sprintf("哈囉,說明待補上")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*20*/				}else if strings.Contains(inText, "請問") || strings.Contains(inText, "請問一下") || strings.Contains(inText, "問妳喔") || strings.Contains(inText, "問你喔"){
+					out := fmt.Sprintf("是, 請說~~, 有什麼我可以幫忙的嗎?")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*21*/				}else if strings.Contains(inText, "你愛我嗎?") || strings.Contains(inText, "你愛我嗎") || strings.Contains(inText, "妳愛我嗎?") || strings.Contains(inText, "妳愛我嗎"){
+					out := fmt.Sprintf(`要不要幫你在網路上搜尋 [愛情] ?
+
+開玩笑的。`)
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*22*/				}else if strings.Contains(inText, "說個故事") || strings.Contains(inText, "說故事") || strings.Contains(inText, "說個故事給我聽") || strings.Contains(inText, "說故事給我聽"){
+					out := fmt.Sprintf("從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說了 : 從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說了 : 從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
@@ -188,7 +215,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 				}else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
 					pet = PetDB.GetNextCat()
 				}*/
-				if pet == nil {
+/*99*/				if pet == nil {
 					pet = PetDB.GetNextPet()
 				}
 
