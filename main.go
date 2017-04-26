@@ -167,8 +167,13 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-				}else if strings.Contains(inText, "你好嗎") || strings.Contains(inText, "你好嗎?"){
+				}else if strings.Contains(inText, "你好嗎") || strings.Contains(inText, "你好嗎?") || strings.Contains(inText, "are you ok?") || strings.Contains(inText, "are you ok") || strings.Contains(inText, "Are you ok?") || strings.Contains(inText, "Are you ok"){
 					out := fmt.Sprintf("I'm not good (ah...) , 只是想要坐下來寫個程式而已, 何必把我使喚來使喚去呢, 我不是你們的免費勞工耶.")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+				}else if (message.Text == ``) {
+					out := fmt.Sprintf("123木頭人")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
