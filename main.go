@@ -178,7 +178,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					log.Print(err)
 					}
 				}else if strings.Contains(inText, "冷氣不冷") || strings.Contains(inText, "冷氣保養") || strings.Contains(inText, "不冷") || strings.Contains(inText, "冷氣不涼") || strings.Contains(inText, "不涼") || strings.Contains(inText, "冷氣清潔方法") || strings.Contains(inText, "冷氣清潔"){
-					out := fmt.Sprintf("待補上")
+					out := fmt.Sprintf("待補上 傳送門: https://www.youtube.com/watch?v=orOkJ6rsJZg")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
