@@ -24,12 +24,12 @@ import (
 
 var bot *linebot.Client
 
-//PetDB :
-//var PetDB *Pets
+PetDB :
+var PetDB *Pets
 
 func main() {
 	var err error
-        //PetDB = NewPets()
+        PetDB = NewPets()
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
 	log.Println("Bot:", bot, " err:", err)
 	http.HandleFunc("/callback", callbackHandler)
@@ -52,7 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {	
 			case *linebot.TextMessage:
-				/*var pet *Pet*/
+				var pet *Pet
 				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
 				if strings.Contains(inText, "三色線") || strings.Contains(inText, "三色線接法") || strings.Contains(inText, "三色線怎麼接") || strings.Contains(inText, "三色線接電視") || strings.Contains(inText, "三條線") || strings.Contains(inText, "三條線接法") || strings.Contains(inText, "三條線怎麼接") || strings.Contains(inText, "三條線接電視") || strings.Contains(inText, "AV線") || strings.Contains(inText, "AV線接法") || strings.Contains(inText, "AV線怎麼接") || strings.Contains(inText, "AV線接電視") || strings.Contains(inText, "AV端子") || strings.Contains(inText, "AV端子接法") || strings.Contains(inText, "AV端子怎麼接") || strings.Contains(inText, "AV端子接電視") || strings.Contains(inText, "電視接三色線") || strings.Contains(inText, "電視接三條線") || strings.Contains(inText, "電視接AV線") || strings.Contains(inText, "電視接AV端子") || strings.Contains(inText, "紅白黃") || strings.Contains(inText, "紅黃白") || strings.Contains(inText, "白黃紅") || strings.Contains(inText, "白紅黃") || strings.Contains(inText, "黃紅白") || strings.Contains(inText, "黃白紅") || strings.Contains(inText, "紅白黃線") || strings.Contains(inText, "紅黃白線") || strings.Contains(inText, "白黃紅線") || strings.Contains(inText, "白紅黃線") || strings.Contains(inText, "黃紅白線") || strings.Contains(inText, "黃白紅線"){
@@ -187,18 +187,18 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					pet = PetDB.GetNextDog()
 				}else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
 					pet = PetDB.GetNextCat()
-				}
+				}*/
 
 				if pet == nil {
 					pet = PetDB.GetNextPet()
-				}*/
+				}
 				
-				/*out := fmt.Sprintf("您好，目前的動物：名為%s, 所在地為:%s, 敘述: %s 電話為:%s 圖片網址在: %s", pet.Name, pet.Resettlement, pet.Note, pet.Phone, pet.ImageName)
+				out := fmt.Sprintf("恩恩,然後咧??")
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 				}
 
-				log.Println("Img:", pet.ImageName)
+  				/*log.Println("Img:", pet.ImageName)
 
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(pet.ImageName, pet.ImageName)).Do(); err != nil {
 					log.Print(err)
