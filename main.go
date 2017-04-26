@@ -162,7 +162,13 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
+				}else if strings.Contains(inText, "AKIRA放送") || strings.Contains(inText, "akira放送") || strings.Contains(inText, "Akira放送") || strings.Contains(inText, "AKIRA") || strings.Contains(inText, "akira") || strings.Contains(inText, "Akira") || strings.Contains(inText, "放送") || strings.Contains(inText, "日語教學") || strings.Contains(inText, "AKIRA 放送") || strings.Contains(inText, "akira 放送") || strings.Contains(inText, "Akira 放送") || strings.Contains(inText, "日語"){
+					out := fmt.Sprintf("AKIRA放送 傳送門: https://www.youtube.com/user/kagayaku1006")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				}
+
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
 				}else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
