@@ -204,8 +204,13 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*22*/				}else if strings.Contains(inText, "說個故事") || strings.Contains(inText, "說故事") || strings.Contains(inText, "說個故事給我聽") || strings.Contains(inText, "說故事給我聽"){
+/*22*/				}else if strings.Contains(inText, "說個故事") || strings.Contains(inText, "說故事") || strings.Contains(inText, "說個故事給我聽") || strings.Contains(inText, "說故事給我聽") || strings.Contains(inText, "講個故事") || strings.Contains(inText, "講故事") || strings.Contains(inText, "講故事給我聽") || strings.Contains(inText, "講個故事給我聽"){
 					out := fmt.Sprintf("從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說了 : 從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說了 : 從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*23*/				}else if strings.Contains(inText, "我愛妳") || strings.Contains(inText, "我愛你") || strings.Contains(inText, "我喜歡你") || strings.Contains(inText, "我喜歡妳") || strings.Contains(inText, "I Love You") || strings.Contains(inText, "i love you") || strings.Contains(inText, "I love you") || strings.Contains(inText, "I love you~") || strings.Contains(inText, "I Love You~"){
+					out := fmt.Sprintf("I Know")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
