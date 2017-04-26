@@ -224,6 +224,11 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
+/*26*/				}else if strings.Contains(inText, "說個笑話") || strings.Contains(inText, "說笑話") || strings.Contains(inText, "說個笑話給我聽") || strings.Contains(inText, "說笑話給我聽") || strings.Contains(inText, "講個笑話") || strings.Contains(inText, "講笑話") || strings.Contains(inText, "講笑話給我聽") || strings.Contains(inText, "講個笑話給我聽"){
+					out := fmt.Sprintf("我不會。我老是破梗。")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
 				}
 				/*if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
 					pet = PetDB.GetNextDog()
