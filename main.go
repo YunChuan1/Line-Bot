@@ -62,7 +62,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					log.Print(err)
 					}
 /*2*/				}else if strings.Contains(inText, "客服專線") || strings.Contains(inText, "客服") || strings.Contains(inText, "連接客服") || strings.Contains(inText, "打給客服") || strings.Contains(inText, "客服人員") || strings.Contains(inText, "電話") || strings.Contains(inText, "廠商電話") || strings.Contains(inText, "廠商客服專線"){
-					out := fmt.Sprintf(`打電話給韻全:04-26881407
+					out := fmt.Sprintf(`打電話給韻全:04-26881407, 也可以點這裡-> http://yunchuan1.weebly.com/36899320972510520497.html
+
 廠商客服專線-傳送門:http://yunchuan1.weebly.com/242882183023458263812356032218.html`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
@@ -82,7 +83,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*6*/				}else if strings.Contains(inText, "作者") || strings.Contains(inText, "開發人員") || strings.Contains(inText, "Creater") || strings.Contains(inText, "CREATER") || strings.Contains(inText, "創作者") || strings.Contains(inText, "開發者"){
+/*6*/				}else if strings.Contains(inText, "作者") || strings.Contains(inText, "開發人員") || strings.Contains(inText, "Creater") || strings.Contains(inText, "CREATER") || strings.Contains(inText, "創作者") || strings.Contains(inText, "開發者") || strings.Contains(inText, "creater"){
 					out := fmt.Sprintf("Made by 蔡侑憬")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
@@ -106,7 +107,7 @@ http://yunchuan1.weebly.com/36899320972510520497.html
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*10*/				}else if strings.Contains(inText, "蔡侑憬") || strings.Contains(inText, "tsaiyouching") || strings.Contains(inText, "TsaiYouChing") || strings.Contains(inText, "Tsaiyouching") || strings.Contains(inText, "YouChingTsai") || strings.Contains(inText, "youchingTsai") || strings.Contains(inText, "youchingtsai") || strings.Contains(inText, "YouChing") || strings.Contains(inText, "youching") || strings.Contains(inText, "侑憬蔡") || strings.Contains(inText, "侑憬") || strings.Contains(inText, "Jack Tsai") || strings.Contains(inText, "JackTsai") || strings.Contains(inText, "Jack蔡") || strings.Contains(inText, "tsaiyujing") || strings.Contains(inText, "YC") || strings.Contains(inText, "yc"){
+/*10*/				}else if strings.Contains(inText, "蔡侑憬") || strings.Contains(inText, "tsaiyouching") || strings.Contains(inText, "TsaiYouChing") || strings.Contains(inText, "Tsaiyouching") || strings.Contains(inText, "YouChingTsai") || strings.Contains(inText, "youchingTsai") || strings.Contains(inText, "youchingtsai") || strings.Contains(inText, "YouChing") || strings.Contains(inText, "youching") || strings.Contains(inText, "侑憬蔡") || strings.Contains(inText, "侑憬") || strings.Contains(inText, "Jack Tsai") || strings.Contains(inText, "JackTsai") || strings.Contains(inText, "Jack蔡") || strings.Contains(inText, "tsaiyujing") || strings.Contains(inText, "YC") || strings.Contains(inText, "yc") || strings.Contains(inText, "Tsaiyujing") || strings.Contains(inText, "tsaiyujing") || strings.Contains(inText, "TsaiYuJing"){
 					out := fmt.Sprintf(`很抱歉在維基百科中找不到任何資料!!!
 
 但是搜尋到以下資訊:
