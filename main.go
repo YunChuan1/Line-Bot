@@ -192,7 +192,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*20*/				}else if strings.Contains(inText, "請問") || strings.Contains(inText, "請問一下") || strings.Contains(inText, "問妳喔") || strings.Contains(inText, "問你喔"){
+/*20*/				}else if strings.Contains(inText, "請問") || strings.Contains(inText, "請問一下") || strings.Contains(inText, "問妳喔") || strings.Contains(inText, "問你喔") || strings.Contains(inText, "問妳ㄛ") || strings.Contains(inText, "問你ㄛ") || strings.Contains(inText, "問妳歐") || strings.Contains(inText, "問你歐") || strings.Contains(inText, "問妳哦") || strings.Contains(inText, "問你哦") || strings.Contains(inText, "問你") || strings.Contains(inText, "問妳"){
 					out := fmt.Sprintf("是, 請說~~, 有什麼我可以幫忙的嗎?")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
@@ -204,7 +204,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*22*/				}else if strings.Contains(inText, "說個故事") || strings.Contains(inText, "說故事") || strings.Contains(inText, "說個故事給我聽") || strings.Contains(inText, "說故事給我聽") || strings.Contains(inText, "講個故事") || strings.Contains(inText, "講故事") || strings.Contains(inText, "講故事給我聽") || strings.Contains(inText, "講個故事給我聽"){
+/*22*/				}else if strings.Contains(inText, "說個故事") || strings.Contains(inText, "說故事") || strings.Contains(inText, "說個故事給我聽") || strings.Contains(inText, "說故事給我聽") || strings.Contains(inText, "講個故事") || strings.Contains(inText, "講故事") || strings.Contains(inText, "講故事給我聽") || strings.Contains(inText, "講個故事給我聽") || strings.Contains(inText, "故事"){
 					out := fmt.Sprintf("從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說了 : 從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說了 : 從前有座山, 山上有座廟, 廟裡有個老和尚, 還有一個小和尚。有一天, 小和尚對老和尚說 : 給我講個故事吧, 老和尚就說")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
@@ -224,7 +224,7 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*26*/				}else if strings.Contains(inText, "說個笑話") || strings.Contains(inText, "說笑話") || strings.Contains(inText, "說個笑話給我聽") || strings.Contains(inText, "說笑話給我聽") || strings.Contains(inText, "講個笑話") || strings.Contains(inText, "講笑話") || strings.Contains(inText, "講笑話給我聽") || strings.Contains(inText, "講個笑話給我聽"){
+/*26*/				}else if strings.Contains(inText, "說個笑話") || strings.Contains(inText, "說笑話") || strings.Contains(inText, "說個笑話給我聽") || strings.Contains(inText, "說笑話給我聽") || strings.Contains(inText, "講個笑話") || strings.Contains(inText, "講笑話") || strings.Contains(inText, "講笑話給我聽") || strings.Contains(inText, "講個笑話給我聽") || strings.Contains(inText, "笑話"){
 					out := fmt.Sprintf("我不會。我老是破梗。")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
@@ -239,12 +239,12 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*29*/				}else if strings.Contains(inText, "聽音樂") || strings.Contains(inText, "撥音樂") || strings.Contains(inText, "撥放音樂") || strings.Contains(inText, "Play Music") || strings.Contains(inText, "play music"){
+/*29*/				}else if strings.Contains(inText, "聽音樂") || strings.Contains(inText, "撥音樂") || strings.Contains(inText, "撥放音樂") || strings.Contains(inText, "Play Music") || strings.Contains(inText, "play music") || strings.Contains(inText, "音樂"){
 					out := fmt.Sprintf("啊~~夭壽喔。撥放鍵被我妹吃了。")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
-/*30*/				}else if strings.Contains(inText, "他馬的") || strings.Contains(inText, "他媽的"){
+/*30*/				}else if strings.Contains(inText, "他馬的") || strings.Contains(inText, "他媽的") || strings.Contains(inText, "她媽的") || strings.Contains(inText, "她馬的") || strings.Contains(inText, "它媽的") || strings.Contains(inText, "它馬的") || strings.Contains(inText, "牠媽的") || strings.Contains(inText, "牠馬的"){
 					out := fmt.Sprintf("嗚嗚~~ 喂警察嗎,就是這個人")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
