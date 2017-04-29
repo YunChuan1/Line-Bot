@@ -246,7 +246,12 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					log.Print(err)
 					}
 /*30*/				}else if strings.Contains(inText, "他馬的") || strings.Contains(inText, "他媽的") || strings.Contains(inText, "她媽的") || strings.Contains(inText, "她馬的") || strings.Contains(inText, "它媽的") || strings.Contains(inText, "它馬的") || strings.Contains(inText, "牠媽的") || strings.Contains(inText, "牠馬的"){
-					out := fmt.Sprintf("嗚嗚~~ 喂警察嗎,就是這個人")
+					out := fmt.Sprintf("嗚嗚~~(〒︿〒)  喂~警察叔叔嗎,就是這個人")
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*31*/				}else if strings.Contains(inText, "使用說明") || strings.Contains(inText, "說明") || strings.Contains(inText, "說明書") || strings.Contains(inText, "你會做什麼") || strings.Contains(inText, "你會做什麼?") || strings.Contains(inText, "你會做什麼呢") || strings.Contains(inText, "你會做什麼呢?") || strings.Contains(inText, "妳會做什麼") || strings.Contains(inText, "妳會做什麼?") || strings.Contains(inText, "妳會做什麼呢") || strings.Contains(inText, "妳會做什麼呢?") || strings.Contains(inText, "妳會幹啥") || strings.Contains(inText, "妳會幹啥?") || strings.Contains(inText, "你會幹啥") || strings.Contains(inText, "你會幹啥?") || strings.Contains(inText, "會做什麼") || strings.Contains(inText, "會做什麼?") || strings.Contains(inText, "會做什麼事") || strings.Contains(inText, "會做什麼事?"){
+					out := fmt.Sprintf("待補上")
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
