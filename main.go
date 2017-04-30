@@ -251,7 +251,22 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 					log.Print(err)
 					}
 /*31*/				}else if strings.Contains(inText, "使用說明") || strings.Contains(inText, "說明") || strings.Contains(inText, "說明書") || strings.Contains(inText, "你會做什麼") || strings.Contains(inText, "你會做什麼?") || strings.Contains(inText, "你會做什麼呢") || strings.Contains(inText, "你會做什麼呢?") || strings.Contains(inText, "妳會做什麼") || strings.Contains(inText, "妳會做什麼?") || strings.Contains(inText, "妳會做什麼呢") || strings.Contains(inText, "妳會做什麼呢?") || strings.Contains(inText, "妳會幹啥") || strings.Contains(inText, "妳會幹啥?") || strings.Contains(inText, "你會幹啥") || strings.Contains(inText, "你會幹啥?") || strings.Contains(inText, "會做什麼") || strings.Contains(inText, "會做什麼?") || strings.Contains(inText, "會做什麼事") || strings.Contains(inText, "會做什麼事?"){
-					out := fmt.Sprintf("待補上")
+					out := fmt.Sprintf(`✯解答電器相關問題✯
+你可以問我這些事情:
+ 1.冷氣問題 ex. 冷氣不冷 ; 冷氣有怪聲 ……
+ 2.電視問題 ex. 電視沒聲音 ; 電視沒影像 ……
+ 3.找商品 ex.惠而浦冰箱( 廠牌+商品 )  or 洗衣機( 商品 ) ……
+ 4.聊天 ex.安安 ; 說故事 ……
+`)
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
+					log.Print(err)
+					}
+/*32*/				}else if strings.Contains(inText, "冷氣有異音") || strings.Contains(inText, "冷氣有怪聲") || strings.Contains(inText, "冷氣有怪音") || strings.Contains(inText, "冷氣異音") || strings.Contains(inText, "冷氣怪聲") || strings.Contains(inText, "冷氣怪音") || strings.Contains(inText, "冷氣有怪聲音"){
+					out := fmt.Sprintf(`可能的原因：
+１當系統在冷氣暖氣或停止運轉時，聽到"劈啪~"促音。這是塑料零件因溫度變化熱脹冷縮所發生的聲音。
+２空調機啟動後會發出運轉音：因溫度調節器轉動而發出該聲響，經1分鐘後會停止。
+３當空調機冷氣或除霜運轉時，聽到持續的"咻~"聲。這是冷媒在室內機和室外機之間流動的聲音。
+４在開始運轉時或停止運轉後聽到。這是冷媒停止流動和改變流向所產生的聲音。在暖房運轉時，系統會自動     切換到除霜運轉。在６～８分鐘（最常１０分鐘）後，系統會恢復到原先運轉。`)
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
 					}
