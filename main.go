@@ -48,6 +48,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
+	log.Printf("Got events %v", events)
 	for _, event := range events {
 		switch event.Type {
 		case linebot.EventTypeMessage:
