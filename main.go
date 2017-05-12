@@ -49,7 +49,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	for _, event := range events {
-		if event.Type == linebot.EventTypeMessage {
+		switch event.Type {
+		case linebot.EventTypeMessage:
+		//if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {	
 			case *linebot.TextMessage:
 				var pet *Pet
