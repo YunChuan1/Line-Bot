@@ -20,11 +20,6 @@ import (
 	"strings"
 
 	"github.com/line/line-bot-sdk-go/linebot"
-	
-	"io"
-	"io/ioutil"
-	"os/exec"
-	"path/filepath"
 )
 
 var bot *linebot.Client
@@ -53,11 +48,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	log.Printf("Got events %v", events)//參考 https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/server.go
 	for _, event := range events {
-		switch event.Type { //參考 https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/server.go
-		case linebot.EventTypeMessage: //參考 https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/server.go
-		//if event.Type == linebot.EventTypeMessage {     參考 https://github.com/line/line-bot-sdk-go/blob/master/examples/kitchensink/server.go
+		if event.Type == linebot.EventTypeMessage {     
 			switch message := event.Message.(type) {	
 			case *linebot.TextMessage:
 				var pet *Pet
@@ -284,40 +276,13 @@ Kan & Aki's CHANNEL: https://www.youtube.com/channel/UCNHqosTdwFPSK5OQsjFoS5g
 				}else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
 					pet = PetDB.GetNextCat()
 				}*/
-/*99*/			/*	if pet == nil {
+/*99*/				if pet == nil {
 					pet = PetDB.GetNextPet()
 				}
 				out := fmt.Sprintf("恩恩,然後咧??")
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out)).Do(); err != nil {
 					log.Print(err)
-				}*/
-				
-				case *linebot.ImageMessage:
-				if err := app.handleImage(message, event.ReplyToken); err != nil {
-					log.Print(err)
 				}
-		case linebot.EventTypeFollow:
-			if err := app.replyText(event.ReplyToken, "Got followed event"); err != nil {
-				log.Print(err)
-			}
-		case linebot.EventTypeUnfollow:
-			log.Printf("Unfollowed this bot: %v", event)
-		case linebot.EventTypeJoin:
-			if err := app.replyText(event.ReplyToken, "Joined "+string(event.Source.Type)); err != nil {
-				log.Print(err)
-			}
-		case linebot.EventTypeLeave:
-			log.Printf("Left: %v", event)
-		case linebot.EventTypePostback:
-			if err := app.replyText(event.ReplyToken, "Got postback: "+event.Postback.Data); err != nil {
-				log.Print(err)
-			}
-		case linebot.EventTypeBeacon:
-			if err := app.replyText(event.ReplyToken, "Got beacon: "+event.Beacon.Hwid); err != nil {
-				log.Print(err)
-			}
-		default:
-			log.Printf("Unknown event: %v", event)
   				/*log.Println("Img:", pet.ImageName)
 
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(pet.ImageName, pet.ImageName)).Do(); err != nil {
