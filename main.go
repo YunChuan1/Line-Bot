@@ -347,7 +347,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					log.Print(err)
 				}*/
 			}
-			linebot.NewImagemapMessage(
+			linebot.NewImagemapMessage{
 				app.appBaseURL+"/static/rich",
 				"Imagemap alt text",
 				linebot.ImagemapBaseSize{1040, 1040},
@@ -355,7 +355,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				linebot.NewURIImagemapAction("https://store.line.me/family/music/en", linebot.ImagemapArea{520, 0, 520, 520}),
 				linebot.NewURIImagemapAction("https://store.line.me/family/play/en", linebot.ImagemapArea{0, 520, 520, 520}),
 				linebot.NewMessageImagemapAction("URANAI!", linebot.ImagemapArea{520, 520, 520, 520}),
-			),
+				}
 		}
 	}
 }
