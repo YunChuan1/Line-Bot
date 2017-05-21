@@ -356,7 +356,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				linebot.NewURIImagemapAction("https://store.line.me/family/play/en", linebot.ImagemapArea{0, 520, 520, 520}),
 				linebot.NewMessageImagemapAction("URANAI!", linebot.ImagemapArea{520, 520, 520, 520}),
 			),
-			),
 		}
 	}
 }
