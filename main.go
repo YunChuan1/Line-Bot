@@ -348,6 +348,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}*/
 			}
 		}
+		string Token = "e4t8awlKGK88HcD9gS2SAC7ijO1FosY+FkgF6tRKfNS6MFgRBQrp+ctDMTdOpBTy8uci9s3IZdZ2nXyyEeHv2xPxZiHlBzcKVuuyS+cw+AhWDuo9WXTJdx/OuFBS46w/eafp1BwyZlV8Ujz8bC3UZgdB04t89/1O/w1cDnyilFU=";
+string toUserId = "tsaiyujing";
+
+//建立LineBot物件實體
+isRock.LineBot.Bot LineBot = new isRock.LineBot.Bot(Token);
+//發送圖片訊息
+LineBot.PushMessage(toUserId,
+    new Uri("http://yunchuan1.weebly.com/uploads/1/6/2/3/16231156/line-ai-2.png"));
+		
 	}
 }
 //  message.Text  
