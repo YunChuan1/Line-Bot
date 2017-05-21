@@ -349,15 +349,25 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	linebot.NewImagemapMessage{
-				app.appBaseURL+"/static/rich",
-				"Imagemap alt text",
-				linebot.ImagemapBaseSize{1040, 1040},
-				linebot.NewURIImagemapAction("https://store.line.me/family/manga/en", linebot.ImagemapArea{0, 0, 520, 520}),
-				linebot.NewURIImagemapAction("https://store.line.me/family/music/en", linebot.ImagemapArea{520, 0, 520, 520}),
-				linebot.NewURIImagemapAction("https://store.line.me/family/play/en", linebot.ImagemapArea{0, 520, 520, 520}),
-				linebot.NewMessageImagemapAction("URANAI!", linebot.ImagemapArea{520, 520, 520, 520}),
-				}
+	imageURL := app.appBaseURL + "/static/buttons/1040.jpg"
+template := linebot.NewCarouselTemplate(
+	linebot.NewCarouselColumn(
+		imageURL, "hoge", "fuga",
+		linebot.NewURITemplateAction("Go to line.me", "https://line.me"),
+		linebot.NewPostbackTemplateAction("Say hello1", "hello こんにちは", ""),
+	),
+	linebot.NewCarouselColumn(
+		imageURL, "hoge", "fuga",
+		linebot.NewPostbackTemplateAction("言 hello2", "hello こんにちは", "hello こんにちは"),
+		linebot.NewMessageTemplateAction("Say message", "Rice=米"),
+	),
+)
+if _, err := app.bot.ReplyMessage(
+	replyToken,
+	linebot.NewTemplateMessage("Carousel alt text", template),
+).Do(); err != nil {
+	return err
+}
 	
 }
 //  message.Text  
